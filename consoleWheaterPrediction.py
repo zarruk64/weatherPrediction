@@ -8,9 +8,7 @@ temp = ["C", "F"]
 def main():
     iterations = int(input("Digite la cantidad para entrenar al modelo (a mayor cantidad, mejor entrenado): \n"))
     print("Entrenando el programa ...")
-    np.random.seed(1)
-    synapticWeights = np.random.random((2, 1)) * 0.01
-    synapticWeights = wp.trainNeuralNetwork(iterations, synapticWeights)
+    synapticWeights = wp.trainNeuralNetwork(iterations)
     print("El programa se ha terminado de entrenar.")
     opt = int(input("Elija una opción para el funcionamiento del programa:\n1.Celcuis\n2.Fahrenheit\n"))
     tMax = []
@@ -26,7 +24,7 @@ def main():
     prediction = wp.predict(inputs, synapticWeights)
     for i in range(len(prediction)):
         if (opt == 1):
-            pred = round(tc.fahrenheitToCelsius(prediction[i][0]), 1)
+            pred = round(tc.fahrenheitToCelsius(prediction[i][0]))
         print(f"La temperatura máxima estimada para el día #{i+1} es:", pred, f"°{temp[opt - 1]}")
     
 main()
