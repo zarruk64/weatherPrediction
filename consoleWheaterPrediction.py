@@ -1,5 +1,6 @@
 import weatherPrediction as wp
 import temperatureCalculator as tc
+import networkVisualizer as nv
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -39,7 +40,7 @@ def main():
         tmax_n = (tMax[i] - np.min(wp.tInputs[:,0])) / (np.max(wp.tInputs[:,0]) - np.min(wp.tInputs[:,0]))
         tmin_n = (tMin[i] - np.min(wp.tInputs[:,1])) / (np.max(wp.tInputs[:,1]) - np.min(wp.tInputs[:,1]))
 
-        wp.visualizeNetwork(
+        nv.visualizeNetwork(
             synapticWeights,
             sampleInput=[tmax_n, tmin_n],
             sampleRaw=[tMax[i], tMin[i]],
