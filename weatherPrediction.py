@@ -11,7 +11,7 @@ tInputs = np.array([np.array(data["tmax"]), np.array(data["tmin"])]).T
 tOutputs = np.array([data["tmax_tomorrow"]])
 tInputsNorm = (tInputs - np.min(tInputs, axis=0)) / (np.max(tInputs, axis=0) - np.min(tInputs, axis=0))
 tOutputsNorm = (tOutputs - np.min(tOutputs)) / (np.max(tOutputs) - np.min(tOutputs))
-learning_rate = 0.00000001
+learning_rate = 0.0000000001
 
 def sigmoid (x):
     return (2 / (1 + np.exp(-x))) - 1
